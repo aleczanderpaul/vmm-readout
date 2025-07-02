@@ -181,16 +181,16 @@ def fitCB(df, plot=True, saveFig=True):
             hist2, bin_edges2, patches2 = plt.hist(gain,nbins,(xmin,xmax), density = True, color='g',alpha=0.6)
             bin_centers2 = (bin_edges2[1:]+bin_edges2[:-1])/2.
             plt.xlabel("Gain")
-            plt.ylabel("Count")
+            plt.ylabel("Probability Density")
             plt.plot(bin_centers, f_opti, 'r--', linewidth=2, label='CB Fit')
             plt.legend(loc='upper right')
-            plt.savefig('gain_fit_CB.png')
+            plt.savefig('gain_fit_CB.png', bbox_inches="tight")
             plt.close()
         elif plot == True and saveFig == False: #if saveFig is False, user will need to add plt.figure() before calling this function
             hist2, bin_edges2, patches2 = plt.hist(gain,nbins,(xmin,xmax), density = True, color='g',alpha=0.6)
             bin_centers2 = (bin_edges2[1:]+bin_edges2[:-1])/2.
             plt.xlabel("Gain")
-            plt.ylabel("Count")
+            plt.ylabel("Probability Density")
             plt.plot(bin_centers, f_opti, 'r--', linewidth=2, label='CB Fit')
 
         charge_sharing = 1.0*np.mean(df.electrons_x/df.electrons_y)
@@ -260,16 +260,16 @@ def fitLorentzian(df, plot=True, saveFig=True):
             hist2, bin_edges2, patches2 = plt.hist(gain,nbins,(xmin,xmax), density = True, color='g',alpha=0.6)
             bin_centers2 = (bin_edges2[1:]+bin_edges2[:-1])/2.
             plt.xlabel("Gain")
-            plt.ylabel("Count")
+            plt.ylabel("Probability Density")
             plt.plot(bin_centers, f_opti, 'b--', linewidth=2, label='Lorentz Fit')
             plt.legend(loc='upper right')
-            plt.savefig('gain_fit_Lorentzian.png')
+            plt.savefig('gain_fit_Lorentzian.png', bbox_inches="tight")
             plt.close()
         elif plot == True and saveFig == False: #if saveFig is False, user will need to add plt.figure() before calling this function
             hist2, bin_edges2, patches2 = plt.hist(gain,nbins,(xmin,xmax), density = True, color='g',alpha=0.6)
             bin_centers2 = (bin_edges2[1:]+bin_edges2[:-1])/2.
             plt.xlabel("Gain")
-            plt.ylabel("Count")
+            plt.ylabel("Probability Density")
             plt.plot(bin_centers, f_opti, 'b--', linewidth=2, label='Lorentz Fit')
 
         charge_sharing = 1.0*np.mean(df.electrons_x/df.electrons_y)
@@ -338,16 +338,16 @@ def fitGaussian(df, plot=True, saveFig=True):
             hist2, bin_edges2, patches2 = plt.hist(gain,nbins,(xmin,xmax), density = True, color='g',alpha=0.6)
             bin_centers2 = (bin_edges2[1:]+bin_edges2[:-1])/2.
             plt.xlabel("Gain")
-            plt.ylabel("Count")
+            plt.ylabel("Probability Density")
             plt.plot(bin_centers, f_opti, 'm--', linewidth=2, label='Gaussian Fit')
             plt.legend(loc='upper right')
-            plt.savefig('gain_fit_Gaussian.png')
+            plt.savefig('gain_fit_Gaussian.png', bbox_inches="tight")
             plt.close()
         elif plot == True and saveFig == False: #if saveFig is False, user will need to add plt.figure() before calling this function
             hist2, bin_edges2, patches2 = plt.hist(gain,nbins,(xmin,xmax), density = True, color='g',alpha=0.6)
             bin_centers2 = (bin_edges2[1:]+bin_edges2[:-1])/2.
             plt.xlabel("Gain")
-            plt.ylabel("Count")
+            plt.ylabel("Probability Density")
             plt.plot(bin_centers, f_opti, 'm--', linewidth=2, label='Gaussian Fit')
 
         charge_sharing = 1.0*np.mean(df.electrons_x/df.electrons_y)
