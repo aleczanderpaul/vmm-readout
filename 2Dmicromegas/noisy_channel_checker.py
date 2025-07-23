@@ -1,16 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from vmm_tools import read_hit
+from vmm_tools import combineDataFrames
 
 
 '''purpose of this script is to find noisy channels by identifying which ones produce significantly more events than the others (for no other apparent reason)'''
 
-dataFrame = read_hit('SourceDetectorData/05-05-25_Source.root') #replace the filename with whichever ROOT file you are analyzing
+rootFolder = "Micromegas/July10" #folder containing the ROOT files
+df_hits, df_clusters = combineDataFrames(rootFolder)
 
 #this function has two purposes: make a histogram of the number of events in each VMM channel, and print the noisy channels that need masking in the slow control
-def channelPlotterPerVMM(dataFrame, vmmID, tooManyCounts):
-    vmmNumber = dataFrame['vmm']
-    channelNumber = dataFrame['ch']
+def channelPlotterPerVMM(df_hits, vmmID, tooManyCounts):
+    vmmNumber = df_hits['vmm']
+    channelNumber = df_hits['ch']
 
     hitInVMMIndices = np.where(vmmNumber == vmmID)[0]
     channelNumber = channelNumber[hitInVMMIndices]
@@ -31,4 +32,4 @@ def channelPlotterPerVMM(dataFrame, vmmID, tooManyCounts):
 
 #plots events per channel histogram for each of the VMMs in the micromegas
 for i in range(0, 16):
-    channelPlotterPerVMM(dataFrame, i, 1000)
+    channelPlotterPerVMM(df_hits, i, 100000)

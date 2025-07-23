@@ -128,17 +128,17 @@ def plotGainAndFits(df_clusters, fiducialize=False, fid_area='a', fit=True, file
 
 '''Main execution'''
 if __name__ == '__main__':
-    rootFolder = "Micromegas/July7" #folder containing the ROOT files
+    rootFolder = "Micromegas/July9" #folder containing the ROOT files
     df_hits, df_clusters = combineDataFrames(rootFolder)
     data_duration = len(glob.glob(os.path.join(rootFolder, "*.root"))) * 30 * 60 #duration of data in seconds, change as needed
-    file_name_append = '_July7' #append to file names, change as needed
+    file_name_append = '_July9_linearscale' #append to file names, change as needed
 
-    plotClusterLocations2D(df_clusters, strip_edges, file_name_append=file_name_append)
+    #plotClusterLocations2D(df_clusters, strip_edges, file_name_append=file_name_append)
     plotXAndYHitRate(df_hits, strip_edges, data_duration, file_name_append=file_name_append)
-    plotXAndYHitCount(df_hits, strip_edges, data_duration, file_name_append=file_name_append)
+    #plotXAndYHitCount(df_hits, strip_edges, data_duration, file_name_append=file_name_append)
     #plotGainAndFits(df_clusters, fiducialize=False, fit=False, file_name_append=file_name_append)
-    plotGainAndFits(df_clusters, fiducialize=False, fit=True, file_name_append=file_name_append)
-    plotGainAndFits(df_clusters, fiducialize=True, fid_area='a', fit=True, file_name_append=file_name_append)
-    plotGainAndFits(df_clusters, fiducialize=True, fid_area='b', fit=True, file_name_append=file_name_append)
-    plotGainAndFits(df_clusters, fiducialize=True, fid_area='c', fit=True, file_name_append=file_name_append)
-    plotGainAndFits(df_clusters, fiducialize=True, fid_area='d', fit=True, file_name_append=file_name_append)
+    #plotGainAndFits(df_clusters, fiducialize=False, fit=True, file_name_append=file_name_append)
+    #plotGainAndFits(df_clusters, fiducialize=True, fid_area='a', fit=True, file_name_append=file_name_append)
+    #plotGainAndFits(df_clusters, fiducialize=True, fid_area='b', fit=True, file_name_append=file_name_append)
+    #plotGainAndFits(df_clusters, fiducialize=True, fid_area='c', fit=True, file_name_append=file_name_append)
+    #plotGainAndFits(df_clusters, fiducialize=True, fid_area='d', fit=True, file_name_append=file_name_append)
